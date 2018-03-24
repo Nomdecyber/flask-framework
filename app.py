@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect,Markup
 from datetime import date, timedelta
-#import os
 import requests
 import pandas as pd
 from bokeh.plotting import figure
@@ -54,4 +53,4 @@ def about():
   return render_template('about.html')
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port = 5000)
+  app.run(host='0.0.0.0', port = 5000, debug = True)
