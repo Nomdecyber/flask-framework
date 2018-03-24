@@ -1,3 +1,5 @@
+gunicorn==19.7.1
+requests==2.18.4
 asn1crypto==0.22.0
 attrs==15.2.0
 audioread==2.1.5
