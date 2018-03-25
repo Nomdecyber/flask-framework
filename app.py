@@ -5,8 +5,8 @@ import pandas as pd
 from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.models import ColumnDataSource
+import os
 
-#port = int(os.environ.get("PORT",5000))
 app = Flask(__name__)
 
 @app.route('/index',methods=['GET','POST'])
@@ -14,7 +14,7 @@ def index():
   if request.method == 'GET':
     return render_template('index.html', placeholder='GOOG')
   else:
-    apiKey = "tmRqcoTZhAiTzz5pZp9g"
+    apiKey = os.environ["QUANDL_KEY"]
     startingDate = date.today() - timedelta(30)
     ticker = request.form['ticker'].upper()
     params = {
